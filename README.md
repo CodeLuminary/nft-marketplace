@@ -1,15 +1,36 @@
-# Basic Sample Hardhat Project
+# MY NFT MARKETPLACE
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+This project demonstrates the creation of a NFT marketplace using Hardhat.
 
-Try running some of the following tasks:
+## Technology Stack & Tools
 
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
+- Solidity (Writing Smart Contract)
+- Javascript (React & Testing)
+- [Ethers](https://docs.ethers.io/v5/) (Blockchain Interaction)
+- [Hardhat](https://hardhat.org/) (Development Framework)
+- [Ipfs](https://ipfs.io/) (Metadata storage)
+
+## Requirements For Initial Setup
+- Install [NodeJS](https://nodejs.org/en/),
+- Install [Hardhat](https://hardhat.org/)
+
+## Setting Up
+### 1. Fork/Clone/Download the Repository
+
+### 2. Install Dependencies:
 ```
+$ cd nft
+$ npm install
+```
+### 3. Boot up local development blockchain
+```
+$ cd nft
+$ npx hardhat node
+```
+
+
+## 🎩 Author
+
+- IJONI VICTOR 😁😁😁
+
+> Don't forget to star the project 😁😁 . Thanks
