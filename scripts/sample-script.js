@@ -19,6 +19,11 @@ async function main() {
 
   await greeter.deployed();
 
+  const Greeter1 = await hre.ethers.getContractFactory("nft");
+  const greeter1 = await Greeter1.deploy();
+
+  //await greeter1.deployed();
+
   console.log("Greeter deployed to:", greeter.address);
 }
 
