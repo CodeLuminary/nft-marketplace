@@ -4,7 +4,7 @@ import { Row, Form, Button } from 'react-bootstrap'
 import { create as ipfsHttpClient } from 'ipfs-http-client'
 const client = ipfsHttpClient('https://ipfs.infura.io:5001/api/v0')
 
-const Create = ({ marketplace, nft }) => {
+const Create = ({ marketplace, nft, account }) => {
   const [image, setImage] = useState('')
   const [price, setPrice] = useState(null)
   const [name, setName] = useState('')
@@ -34,9 +34,10 @@ const Create = ({ marketplace, nft }) => {
   const mintThenList = async (result) => {
     const uri = `https://ipfs.infura.io/ipfs/${result.path}`
     // mint nft 
-    await(await nft.mint(uri)).wait()
+    console.log(nft, "nft")
+    await(await nft.mintItem(account,uri)).wait()
     // get tokenId of new nft 
-    const id = await nft.tokenCount()
+    const id = await nft.totalSupply()
     // approve marketplace to spend nft
     await(await nft.setApprovalForAll(marketplace.address, true)).wait()
     // add nft to marketplace
