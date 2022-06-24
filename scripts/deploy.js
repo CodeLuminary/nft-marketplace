@@ -20,7 +20,8 @@ async function main() {
   
   function saveFrontendFiles(contract, name) {
     const fs = require("fs");
-    const contractsDir = __dirname + "../frontend/src/contractsData";
+    const rootDir = __dirname.toString().slice(0,-7)
+    const contractsDir = rootDir + "frontend/src/contractsData/";
   
     if (!fs.existsSync(contractsDir)) {
       fs.mkdirSync(contractsDir);
@@ -32,11 +33,11 @@ async function main() {
     );
   
     //const contractArtifact = artifacts.readArtifactSync(name);
-    const contractArtifact = fs.readFileSync(`../artifacts/contracts/${name}.sol/${name}.json`)
+    const contractArtifact = fs.readFileSync(`${rootDir}artifacts/contracts/${name}.sol/${name}.json`).toString();
   
     fs.writeFileSync(
       contractsDir + `/${name}.json`,
-      JSON.stringify(contractArtifact, null, 2)
+      JSON.stringify(JSON.parse(contractArtifact), null, 2)
     );
   }
   
